@@ -1,0 +1,28 @@
+{
+    "name": "shibuyakosuke/laravel-model-replacement",
+    "description": "Setup model directory as you want.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ShibuyaKosuke",
+            "email": "shibuya@imagenious.co.jp"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ShibuyaKosuke\\LaravelModelReplacement\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ShibuyaKosuke\\LaravelModelReplacement\\Providers\\CommandServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.2.5",
+        "laravel/framework": "^7.0"
+    }
+}
