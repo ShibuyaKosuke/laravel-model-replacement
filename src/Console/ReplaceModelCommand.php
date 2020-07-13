@@ -60,7 +60,10 @@ class ReplaceModelCommand extends Command
     {
         $file_name = $this->getReflectionUserModel()->getFileName();
         $destination = $this->model_path . '/' . basename($file_name);
-        File::copy($file_name, $destination);
+        if (!file_exists($this->model_path)) {
+            mkdir($this->model_path);
+        }
+        File::move($file_name, $destination);
 
         $contents = str_replace(
             'namespace App;',
