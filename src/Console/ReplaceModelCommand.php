@@ -68,7 +68,7 @@ class ReplaceModelCommand extends Command
         $contents = str_replace(
             'namespace App;',
             sprintf('namespace %s;', $this->namespace),
-            File::get($file_name)
+            File::get($destination)
         );
         File::replace($destination, $contents);
     }
