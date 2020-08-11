@@ -38,11 +38,13 @@ class ReplaceModelCommand extends Command
         $this->namespace = Str::studly(str_replace([base_path() . '/', '/'], ['', '\\'], $this->model_path));
 
         if ($this->namespace === $this->getUserModelNamespace()) {
+            $this->line('model directory already moved.', 'info');
             return;
         }
         $this->copyUserModel();
         $this->modifyAuthConfig();
         $this->modifyRegisterController();
+        $this->line('model directory moved successfully.', 'info');
     }
 
     private function getReflectionUserModel()
